@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<ul id="users-list"></ul>
+<input id="name-input" name="brand" placeholder="Enter user name..." />
+<button id="add-user-button">Add new brand</button>
+
+
+    <script>
+        const renderUsersList = (users) => {
+    const list = document.querySelector('#users-list');
+    list.textContent = "";
+
+    users.forEach(user => {
+        const listItem = document.createElement('li');
+        listItem.textContent = user;
+        list.appendChild(listItem);        
+    });
+};
+
+      const addUserButton = document.querySelector('#add-user-button');  
+
+addUserButton.addEventListener('click', () => {
+    const nameInput = document.querySelector('#name-input');
+    const body = { user: nameInput.value };
+        fetch('http://localhost:4001/users',{
+            method: 'POST',                   
+            body: JSON.stringify(body),
+            headers: {
+                'Content-Type': 'application/json'
+            },            
+        } )      
+            .then(response => response.json())
+            .then(data => {
+                renderUsersList(data);
+                nameInput.value = '';
+            })
+            .catch(error => console.error(error));
+    });
+    </script>
+</body>
+</html>

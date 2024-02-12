@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Brands App</title>
+</head>
+<body>
+    <ul id="brand-list"></ul>
+
+    <script>
+
+    const renderBrandList = (brands) => {
+    const list = document.querySelector('#brand-list')
+    brands.forEach(brand => {
+    const listItem = document.createElement('li')
+    listItem.textContent = brand;
+    list.appendChild(listItem)
+    })
+};
+
+fetch('http://localhost:3003/brands')
+    .then(response => response.json())
+    .then(data => {
+    renderBrandList(data)
+})
+    .catch(error => console.error(error));
+
+        </script>
+    </script>
+    </body>
+    </html>

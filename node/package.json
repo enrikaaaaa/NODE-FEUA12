@@ -1,0 +1,13 @@
+{
+    "name": "name",
+    "description": "description",
+    "authors": "author",
+    "scripts": {
+        "start": "node pathToMain"
+    },
+    "version": "1.0.0",
+    "main": "pathToMain",
+    "dependencies": {
+        "casual": "^1.6.2"
+    }
+}

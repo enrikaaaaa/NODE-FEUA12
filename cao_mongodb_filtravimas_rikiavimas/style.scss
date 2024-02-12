@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.table{
+    display: flex;
+    flex-direction: column;   
+    flex-wrap: wrap; 
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+th{      
+    border-bottom: 1px solid #ffffff;
+    padding: 10px;
+    text-align: center;
+}
+td,tr{
+    padding: 10px;
+    text-align: center;
+}
+#button{
+    display: flex;
+    flex-direction: row;
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+
+}
+h1{
+    font-weight: bold;
+    font-size: 60px;
+    padding-bottom: 30px;
+}
